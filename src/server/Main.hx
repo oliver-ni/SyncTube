@@ -64,11 +64,9 @@ class Main {
 				message: err.message,
 				stack: err.stack
 			});
-			exit();
 		});
 		process.on("unhandledRejection", (reason, promise) -> {
 			logError("unhandledRejection", reason);
-			exit();
 		});
 		logger = new Logger(logsDir, 10, verbose);
 		consoleInput = new ConsoleInput(this);
